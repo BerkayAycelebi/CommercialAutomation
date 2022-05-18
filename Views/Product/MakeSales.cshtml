@@ -1,0 +1,44 @@
+﻿@model MVC_OnlineCommercialAutomation.Models.Classes.SalesMovement
+@{
+    ViewBag.Title = "MakeSales";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<br />
+<h2>Satış Yap</h2>
+<br />
+<form class="form-group" method="post">
+    @Html.Label("Ürün ID:")
+    <input type="text" class="form-control" readonly name="Productid" value="@ViewBag.val1">
+    <br />
+    @Html.Label("Personel:")
+    @Html.DropDownListFor(x => x.Staffid, (List<SelectListItem>)ViewBag.val3, new { @class = "form-control" })
+    <br />
+    @Html.Label("Cari:")
+    @Html.TextBoxFor(x => x.Currentid, new { @class = "form-control" })
+    <br />
+    @Html.Label("Adet:")
+    <input type="number" id="txt1" class="form-control" min="1" onchange="sum();" name="number"/>
+    <br />
+    @Html.Label("Fiyat:")
+    <input type="text" class="form-control" readonly name="Price" value="@ViewBag.val2"id="txt2" onkeyup="sum();">
+    <br />
+    @Html.Label("Toplam Tutar:")
+<input type="text" id="txt3"class="form-control" name="TotalAmount" readonly value="0"/>
+
+    <br />
+    <button class="btn btn-primary">Satış Yap</button>
+
+</form>
+
+<script>
+    function sum() {
+
+        var x = document.getElementById('txt1').value;
+        var y = document.getElementById('txt2').value;
+        var result = parseInt(x) * parseInt(y);
+        if (!isNaN(result)) {
+            document.getElementById('txt3').value = result;
+        }
+
+    }
+</script>

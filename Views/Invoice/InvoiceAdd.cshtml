@@ -1,0 +1,41 @@
+﻿@model MVC_OnlineCommercialAutomation.Models.Classes.Invoice
+
+@{
+    ViewBag.Title = "InvoiceAdd";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<br />
+<h2>Fatura Ekleme Sayfası</h2>
+<br />
+<form class="form-group" method="post">
+    @Html.Label("Fatura Seri No:")
+    @Html.TextBoxFor(x => x.InvoiceSerialNumber, new { @class = "form-control" })
+    <br />
+    @Html.Label("Fatura Sıra No:")
+    @Html.TextBoxFor(x => x.InvoiceRowNumber, new { @class = "form-control" })
+    <br />
+    @Html.Label("Tarih:")
+    <input type="date" id="History" name="History" class="form-control">
+    <br />
+
+    @Html.Label("Saat:")
+    @Html.TextBoxFor(x => x.Hour, new { @class = "form-control" })
+    <br />
+    @Html.Label("Vergi Dairesi:")
+    @Html.TextBoxFor(x => x.TaxAdministration, new { @class = "form-control" })
+    <br />
+    @Html.Label("Teslim Eden:")
+    @Html.TextBoxFor(x => x.DeliveryPeople, new { @class = "form-control" })
+    <br />
+
+    @Html.Label("Teslim Alan:")
+    @Html.TextBoxFor(x => x.Receiver, new { @class = "form-control" })
+    <br />
+
+    @Html.Label("Toplam Tutar:")
+    @Html.TextBoxFor(x => x.Total, new { @class = "form-control" })
+    <br />
+
+    <button class="btn btn-info">Kaydet</button>
+</form>

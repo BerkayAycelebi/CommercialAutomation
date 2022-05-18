@@ -1,0 +1,41 @@
+﻿@model MVC_OnlineCommercialAutomation.Models.Classes.Product
+@{
+    ViewBag.Title = "NewProductAdd";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>Yen Ürün Ekleme Sayfası</h2>
+<br />
+
+<form class="form-group" method="post">
+    @Html.Label("Ürün Adı:")
+    @Html.TextBoxFor(x => x.ProductName, new { @class = "form-control" })
+    <br />
+    @Html.Label("Marka:")
+    @Html.TextBoxFor(x => x.ProductBrand, new { @class = "form-control" })
+    <br />
+    @Html.Label("Stok:")
+    @Html.TextBoxFor(x => x.ProductStock, new { @class = "form-control" })
+    <br />
+    @Html.Label("Alış Fiyatı:")
+    @Html.TextBoxFor(x => x.PurchasePrice, new { @class = "form-control" })
+    <br />
+    @Html.Label("Satış Fiyatı:")
+    @Html.TextBoxFor(x => x.SellingPrice, new { @class = "form-control" })
+    <br />
+    @Html.Label("Kategori:")
+    @Html.DropDownListFor(x => x.CategoryID, (List<SelectListItem>)ViewBag.val, new { @class = "form-control" })
+
+    <br />
+    @Html.Label("Görsel:")
+    @Html.TextBoxFor(x => x.ProductPicture, new { @class = "form-control" })
+    <br />
+
+    <br />
+    @Html.Label("Durum:")
+    @Html.TextBoxFor(x => x.Status, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-primary">Kaydet</button>
+
+</form>
+

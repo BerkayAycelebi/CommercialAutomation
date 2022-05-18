@@ -1,0 +1,27 @@
+﻿@using MVC_OnlineCommercialAutomation.Models.Classes
+@model List<CargoTrack>
+@{
+    ViewBag.Title = "CurrentCargoTrack";
+    Layout = "~/Views/Shared/_CurrentLayout.cshtml";
+}
+
+<h2>Kargo Detayları</h2>
+
+<br />
+<table class=" table table-striped">
+
+    <tr>
+        <th>Açıklama</th>
+        <th>Tarih</th>
+
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.Explanation</td>
+            <td>@x.History</td>
+
+        </tr>
+    }
+
+</table>

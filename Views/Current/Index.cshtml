@@ -1,0 +1,36 @@
+﻿@using MVC_OnlineCommercialAutomation.Models.Classes
+@model List<Current>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<br />
+
+<table class=" table table-striped">
+
+    <tr>
+        <th>Cari ID</th>
+        <th>Ad</th>
+        <th>Soyad</th>
+        <th>Şehir</th>
+        <th>Mail Adresi</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+        <th>Detaylar</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+<tr>
+    <td>@x.CurrentID</td>
+    <td>@x.CurrentName</td>
+    <td>@x.CurrentSurname</td>
+    <td>@x.CurrentCity</td>
+    <td>@x.CurrentMail</td>
+    <td><a href="/Current/CurrentDelete/@x.CurrentID" class="btn btn-outline-danger">Sil</a> </td>
+    <td><a href="/Current/CurrentGet/@x.CurrentID" class="btn btn-outline-warning">Güncelle</a> </td>
+    <td><a href="/Current/CustomerSales/@x.CurrentID" class="btn btn-outline-primary">Satış Geçmişi</a> </td>
+</tr>
+    }
+
+</table>
+<a href="/Current/CurrentAdd" class="btn btn-outline-success">Yeni Cari Ekle</a>

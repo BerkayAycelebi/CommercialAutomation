@@ -1,0 +1,36 @@
+﻿@using MVC_OnlineCommercialAutomation.Models.Classes
+@model List<Staff>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>Personeller</h2>
+<table class="table table-bordered" style="margin-top:20px">
+    <tr>
+        <th>ID</th>
+        <th>Personel Adı</th>
+        <th>Personel Soyadı</th>
+        <th>Görsel</th>
+        <th>Departman</th>
+        <th>Güncelle</th>
+        <th>Satışlar</th>
+    </tr>
+
+    @foreach (var k in Model)
+    {
+        <tr>
+            <td align="center">@k.StaffID</td>
+            <td align="center">@k.StaffName</td>
+            <td align="center">@k.StaffSurname</td>
+            <td align="center"><img src="@k.StaffPicture" style="height:50px;width:100px" /></td>
+            <td align="center">@k.Departmant.DepartmantName</td>
+
+            <td align="center"><a href="/Staff/StaffGet/@k.StaffID" class="btn btn-warning">Güncelle</a></td>
+            <td align="center"><a href="/Departmant/DepartmanStaffSales/@k.StaffID" class="btn btn-info " style="color:white">Satışlar</a></td>
+        </tr>
+    }
+</table>
+<a href="/Staff/StaffAdd" class="btn btn-success">Personel Ekle</a>
+
+

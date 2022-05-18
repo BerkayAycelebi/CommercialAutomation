@@ -1,0 +1,39 @@
+﻿@model IEnumerable<MVC_OnlineCommercialAutomation.Models.Classes.ClassGroup2>
+
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">Markalar</h3>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body p-0">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th style="width: 10px">#</th>
+                    <th>Marka</th>
+                    <th>Oran</th>
+                    <th style="width: 40px">Adet</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{ int y = 0;}
+                @foreach (var x in Model)
+                {
+                    <tr>
+                        <td> @{ y++; } @y.</td>
+                        <td>@x.brand</td>
+                        <td>
+                            <div class="progress progress-xs">
+                                <div class="progress-bar progress-bar-danger" style="width: @x.number%"></div>
+                            </div>
+                        </td>
+                        <td><span class="badge bg-danger"> @x.number</span></td>
+                    </tr>
+                }
+
+
+            </tbody>
+        </table>
+    </div>
+    <!-- /.card-body -->
+</div>

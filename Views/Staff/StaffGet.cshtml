@@ -1,0 +1,32 @@
+﻿@model MVC_OnlineCommercialAutomation.Models.Classes.Staff
+@{
+    ViewBag.Title = "StaffGet";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+
+<br />
+<h2>Personel Güncelleme Sayfası</h2>
+<br />
+
+@using (Html.BeginForm("StaffUpdate", "Staff", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.HiddenFor(x => x.StaffID)
+    @Html.Label("Personel Adı:")
+    @Html.TextBoxFor(x => x.StaffName, new { @class = "form-control" })
+    <br />
+    @Html.Label("Personel Soyadı:")
+    @Html.TextBoxFor(x => x.StaffSurname, new { @class = "form-control" })
+    <br />
+    @Html.Label("Görsel:")
+    <br />
+    <img src="@Model.StaffPicture" height="100px" width="100px" />
+    <br /><br />
+    <input type="file" name="StaffPicture" class="form-control" />
+    <br />
+    @Html.Label("Departman:")
+    @Html.DropDownListFor(x => x.DepartmantID, (List<SelectListItem>)ViewBag.val, new { @class = "form-control" })
+
+    <br />
+    <button class="btn btn-warning" id="btn">Kaydet</button>
+}

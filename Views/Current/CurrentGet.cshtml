@@ -1,0 +1,32 @@
+﻿@model MVC_OnlineCommercialAutomation.Models.Classes.Current
+@{
+    ViewBag.Title = "CurrentGet";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<br />
+<h2>Cari Güncelleme Sayfası</h2>
+<br />
+
+@using (Html.BeginForm("CurrentUpdate", "Current", FormMethod.Post))
+{
+<div class="form-group">
+    @Html.Label("Cari Adı")
+    @Html.TextBoxFor(x => x.CurrentName, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.CurrentName, "", new { @style = "color:red" })
+    <br />
+    @Html.Label("Cari Soyadı")
+    @Html.TextBoxFor(x => x.CurrentSurname, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.CurrentSurname, "", new { @style = "color:red" })
+    <br />
+    @Html.Label("Şehir")
+    @Html.TextBoxFor(x => x.CurrentCity, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.CurrentCity, "", new { @style = "color:red" })
+    <br />
+    @Html.Label("Mail Adresi")
+    @Html.TextBoxFor(x => x.CurrentMail, new { @class = "form-control" })
+    @Html.HiddenFor(x => x.CurrentID)
+    @Html.ValidationMessageFor(x => x.CurrentMail, "", new { @style = "color:red" })
+    <br />
+</div>
+    <button class="btn btn-warning">Güncelle</button>
+}

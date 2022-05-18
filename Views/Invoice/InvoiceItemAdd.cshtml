@@ -1,0 +1,28 @@
+﻿@model MVC_OnlineCommercialAutomation.Models.Classes.InvoiceItem
+@{
+    ViewBag.Title = "InvoiceItemAdd";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<br />
+<h2>Fatura Kalem Ekleme Sayfası</h2>
+<br />
+<form class="form-group" method="post">
+    @Html.Label("Açıklama:")
+    @Html.TextBoxFor(x => x.Explanation, new { @class = "form-control" })
+    <br />
+    @Html.Label("Adet:")
+    @Html.TextBoxFor(x => x.Quantity, new { @class = "form-control" })
+    <br />
+    @Html.Label("Birim Fiyat:")
+    @Html.TextBoxFor(x => x.UnitPrice, new { @class = "form-control" })
+    <br />
+    @Html.Label("Toplam Tutar:")
+    @Html.TextBoxFor(x => x.Amount, new { @class = "form-control" })
+    <br />
+    @Html.Label("Fatura:")
+    @Html.TextBoxFor(x => x.Invoiceid, new { @class = "form-control" })
+    <br />
+
+    <button class="btn btn-info">Kaydet</button>
+</form>

@@ -1,0 +1,50 @@
+﻿@using MVC_OnlineCommercialAutomation.Models.Classes
+@model List<Message>
+<div class="timeline timeline-inverse">
+
+    <!-- timeline time label -->
+    @foreach (var x in Model)
+    {
+        <div class="time-label">
+
+            <span class="bg-warning">
+
+                @x.Date.ToShortDateString()
+            </span>
+
+        </div>
+
+        <!-- /.timeline-label -->
+        <!-- timeline item -->
+
+        <div>
+
+            <i class="fas fa-envelope bg-primary"></i>
+
+            <div class="timeline-item">
+
+
+                <h3 class="timeline-header" ><font color="blue" style="font-weight:bold">@x.Topic</font></h3>
+
+                <div class="timeline-body">
+
+                  @x.Text
+
+                </div>
+
+                
+
+            </div>
+
+        </div>
+
+
+
+
+    }
+    <div>
+
+        <i class="far fa-clock bg-gray"></i>
+
+    </div>
+</div>

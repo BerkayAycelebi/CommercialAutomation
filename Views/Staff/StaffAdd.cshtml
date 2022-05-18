@@ -1,0 +1,33 @@
+﻿@model MVC_OnlineCommercialAutomation.Models.Classes.Staff
+@{
+    ViewBag.Title = "StaffAdd";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="~/Scripts/jquery-3.4.1.js"></script>
+<br />
+<h2>Personel Ekleme Sayfası</h2>
+<br />
+@using(Html.BeginForm("StaffAdd","Staff",FormMethod.Post, new { enctype = "multipart/form-data" })) { 
+<form class="form-group" method="post">
+    @Html.Label("Personel Adı:")
+    @Html.TextBoxFor(x => x.StaffName, new { @class = "form-control" })
+    <br />
+    @Html.Label("Personel Soyadı:")
+    @Html.TextBoxFor(x => x.StaffSurname, new { @class = "form-control" })
+    <br />
+    @Html.Label("Görsel:")
+   
+    <input type="file" name="StaffPicture" class="form-control" />
+
+    <br />
+
+    @Html.Label("Departman:")
+    @Html.DropDownListFor(x => x.DepartmantID, (List<SelectListItem>)ViewBag.val, new { @class = "form-control" })
+
+    <br />
+
+    <button class="btn btn-info" type="" id="btn">Kaydet</button>
+</form>
+}
+

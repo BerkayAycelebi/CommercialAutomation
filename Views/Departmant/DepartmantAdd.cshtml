@@ -1,0 +1,15 @@
+﻿@model MVC_OnlineCommercialAutomation.Models.Classes.Departmant
+@{
+    ViewBag.Title = "DepartmanAdd";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<br />
+<h2>Departman Ekleme Sayfası</h2>
+<br />
+<form class="form-group" method="post">
+    @Html.Label("Departman Adı:")
+    @Html.TextBoxFor(x => x.DepartmantName, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Kaydet</button>
+</form>

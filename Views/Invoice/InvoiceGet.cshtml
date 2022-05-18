@@ -1,0 +1,35 @@
+﻿@model MVC_OnlineCommercialAutomation.Models.Classes.Invoice
+@{
+    ViewBag.Title = "InvoiceGet";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<br />
+<h2>Fatura Güncelleme Sayfası</h2>
+
+@using (Html.BeginForm("InvoiceUpdate", "Invoice", FormMethod.Post))
+{
+    @Html.HiddenFor(x => x.InvoiceID)
+    @Html.Label("Fatura Seri No:")
+    @Html.TextBoxFor(x => x.InvoiceSerialNumber, new { @class = "form-control" })
+    <br />
+    @Html.Label("Fatura Sıra No:")
+    @Html.TextBoxFor(x => x.InvoiceRowNumber, new { @class = "form-control" })
+    <br />
+    @Html.Label("Tarih:")
+    @Html.TextBoxFor(x => x.History, new { @class = "form-control" })
+    <br />
+    @Html.Label("Saat:")
+    @Html.TextBoxFor(x => x.Hour, new { @class = "form-control" })
+    <br />
+    @Html.Label("Vergi Dairesi:")
+    @Html.TextBoxFor(x => x.TaxAdministration, new { @class = "form-control" })
+      <br />
+    @Html.Label("Teslim Eden:")
+    @Html.TextBoxFor(x => x.DeliveryPeople, new { @class = "form-control" })
+    <br />
+    @Html.Label("Teslim Alan:")
+    @Html.TextBoxFor(x => x.Receiver, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-warning">Kaydet</button>
+}

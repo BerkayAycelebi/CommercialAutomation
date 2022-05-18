@@ -1,0 +1,40 @@
+﻿@using MVC_OnlineCommercialAutomation.Models.Classes
+@model List<SalesMovement>
+@{
+    ViewBag.Title = "SalesDetail";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<br />
+<h2>Satış Detay</h2>
+
+<table class="table table-hover">
+
+    <tr>
+        <th>Satış ID</th>
+        <th>Ürün</th>
+        <th>Cari</th>
+        <th>Personel</th>
+        <th>Fiyat</th>
+        <th>Adet</th>
+        <th>Toplam</th>
+        <th>Tarih</th>
+     
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.SalesID</td>
+            <td>@x.Product.ProductName</td>
+            <td>@x.Current.CurrentName @x.Current.CurrentSurname</td>
+            <td>@x.Staff.StaffName @x.Staff.StaffSurname</td>
+            <td>@x.Price</td>
+            <td>@x.Number</td>
+            <td>@x.TotalAmount</td>
+            <td>@x.History</td>
+        
+        </tr>
+    }
+</table>
+
+<button class="btn btn-outline-primary">Yazdır</button>
